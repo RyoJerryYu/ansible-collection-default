@@ -26,5 +26,11 @@ jobs:
           api_key: "${{ secrets.GALAXY_API_KEY }}"
           galaxy_version: "${{ github.ref_name }}"
 
+  release:
+    needs: publish
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
       - name: Release
         uses: softprops/action-gh-release@v1
