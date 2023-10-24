@@ -13,6 +13,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      
+      - name: Debug ref name
+        run: echo "GITHUB_REF_NAME=${{ env.GITHUB_REF_NAME }}"
+      
+      - name: Debug ref
+        run: echo "GITHUB_REF=${{ env.GITHUB_REF }}"
 
       - name: Publish Ansible Collection
         uses: artis3n/ansible_galaxy_collection@v2
