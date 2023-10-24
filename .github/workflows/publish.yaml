@@ -24,7 +24,7 @@ jobs:
         uses: artis3n/ansible_galaxy_collection@v2
         with:
           api_key: "${{ secrets.GALAXY_API_KEY }}"
-          galaxy_version: "${{ GITHUB_REF_NAME }}"
+          galaxy_version: "${{ github.ref_name }}"
 
       - name: Release
         uses: softprops/action-gh-release@v1
