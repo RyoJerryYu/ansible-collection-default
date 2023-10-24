@@ -1,0 +1,6 @@
+---
+- name: restart nvidia_gpu_exporter
+  service:
+    name: nvidia_gpu_exporter
+    state: restarted
+  become: true

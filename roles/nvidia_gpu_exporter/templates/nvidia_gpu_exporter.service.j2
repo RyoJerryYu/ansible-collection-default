@@ -1,0 +1,13 @@
+[Unit]
+Description=Nvidia GPU Exporter
+After=network-online.target
+
+[Service]
+Type=simple
+TimeoutStartSec=0
+
+User={{ nvidia_gpu_exporter_user }}
+ExecStart={{ nvidia_gpu_exporter_bin_path }} --web.listen-address={{ nvidia_gpu_exporter_host }}:{{ nvidia_gpu_exporter_port }} {{ nvidia_gpu_exporter_options }}
+
+[Install]
+WantedBy=multi-user.target

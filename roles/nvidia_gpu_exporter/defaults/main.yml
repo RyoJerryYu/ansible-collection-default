@@ -1,0 +1,15 @@
+---
+# See available releases: https://github.com/utkuozdemir/nvidia_gpu_exporter/releases
+nvidia_gpu_exporter_version: '1.2.0'
+
+nvidia_gpu_exporter_download_url: https://github.com/utkuozdemir/nvidia_gpu_exporter/releases/download/v{{ nvidia_gpu_exporter_version }}/nvidia_gpu_exporter_{{ nvidia_gpu_exporter_version }}_linux_{{ ansible_architecture }}.tar.gz
+nvidia_gpu_exporter_bin_path: /usr/local/bin/nvidia_gpu_exporter
+nvidia_gpu_exporter_user: ec2-user
+
+# Set nvidia_gpu_exporter_host to localhost if you wish to expose nvidia_gpu_exporter on localhost only.
+nvidia_gpu_exporter_host: ''
+nvidia_gpu_exporter_port: 9835
+nvidia_gpu_exporter_options: ''
+
+nvidia_gpu_exporter_state: started
+nvidia_gpu_exporter_enabled: true
