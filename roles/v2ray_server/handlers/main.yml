@@ -1,0 +1,12 @@
+---
+- name: configtest
+  become: true
+  command: /usr/local/bin/v2ray test -c /usr/local/etc/v2ray/config.json
+  register: v2ray_configtest_result
+
+- name: restart
+  become: true
+  service:
+    name: v2ray
+    state: restarted
+  when: v2ray_configtest_result is succeeded
